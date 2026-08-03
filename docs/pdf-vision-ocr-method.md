@@ -10,30 +10,34 @@
 
 ## 仕組み
 
-1. **PDF分割**: Python `pypdf` で1ページずつのPDFに分割
-2. **画像変換**: macOS `sips` でPNGに変換
-3. **Vision OCR**: Gemini（例: `gemini-2.5-flash`）に画像を渡してテキスト抽出
-4. **自動継続**: 出力済みの `--- Page N ---` を見て未処理ページから再開
+1. **画像変換**: 1ページずつPNG化
+   - Linux: `pdftoppm`（poppler-utils）
+   - macOS: `pypdf` で1ページPDF分割 → `sips` でPNG化
+2. **Vision OCR**: Gemini（例: `gemini-2.5-flash`）に画像を渡してテキスト抽出
+3. **自動継続**: 出力済みの `--- Page N ---` を見て未処理ページから再開
 
 ## 必要な環境
 
 - Node.js / `tsx`
 - Python 3 + `pypdf`
-- macOS（`sips`）
+- Linux: `poppler-utils`（`pdftoppm`） / macOS: `sips`
 - `.env.local` に `GEMINI_API_KEY`
 - `@google/generative-ai`
 
 ## スクリプト
 
-`scripts/ocr-ep7-vision.mts`
+- 汎用: `scripts/ocr-pdf-vision.mts`
+- 旧・特定本向け: `scripts/ocr-ep7-vision.mts`
 
 ## 実行
 
 ```bash
-npx tsx scripts/ocr-ep7-vision.mts
+npx tsx scripts/ocr-pdf-vision.mts <book-id> [pdf-path]
+# 例
+npx tsx scripts/ocr-pdf-vision.mts churing
 ```
 
-出力先の例: `books/art-thinking/text.txt`
+出力先: `books/<book-id>/text.txt`
 
 ## プロンプト方針（Podcast用）
 
