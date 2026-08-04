@@ -25,15 +25,22 @@
 
 ## スクリプト
 
-`scripts/ocr-ep7-vision.mts`
+汎用: `scripts/ocr-vision-pdf.mts`  
+（旧: `scripts/ocr-ep7-vision.mts` は art-thinking 向け固定パス）
 
 ## 実行
 
 ```bash
-npx tsx scripts/ocr-ep7-vision.mts
+npx tsx scripts/ocr-vision-pdf.mts <book-dir> <pdf-path>
 ```
 
-出力先の例: `books/art-thinking/text.txt`
+例:
+
+```bash
+npx tsx scripts/ocr-vision-pdf.mts books/churing "books/churing/チューリングの計算理論入門 _ チューリング･マシンからコンピュータへ 高岡 詠子.pdf"
+```
+
+出力先: `<book-dir>/text.txt`
 
 ## プロンプト方針（Podcast用）
 

@@ -1,0 +1,28 @@
+{
+  "name": "book-talk-podcast",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "summarize": "tsx scripts/01-summarize.mts",
+    "questions": "tsx scripts/02-yota-questions.mts",
+    "script": "tsx scripts/03-write-script.mts",
+    "refresh-chapters": "tsx scripts/01c-refresh-chapter-summaries.mts",
+    "pipeline": "tsx scripts/run-pipeline.mts",
+    "tts": "tsx scripts/04-generate-tts.mts",
+    "prepare:elevenlabs": "tsx scripts/prepare-elevenlabs-script.mts",
+    "ocr:vision": "tsx scripts/ocr-vision-pdf.mts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.12.0",
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^17.4.2",
+    "ffmpeg-static": "^5.3.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}
