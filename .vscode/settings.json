@@ -8,7 +8,8 @@
     "editor.wordWrap": "on"
   },
   "files.associations": {
-    "*-script-elevenlabs.txt": "plaintext",
-    "*-script.txt": "plaintext"
+    "*-script-elevenlabs.txt": "markdown",
+    "*-script-for-elevenlabs.txt": "markdown",
+    "*-script.txt": "markdown"
   }
 }
