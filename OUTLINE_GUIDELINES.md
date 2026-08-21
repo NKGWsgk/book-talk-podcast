@@ -6,7 +6,7 @@
 - 構成案の段階では、このファイルのルールに従う
 - 本番台本に落とす段階では、`GUIDELINES.md` に従う
 - 構成案のルールを、台本ルールの延長や部分集合として扱わない
-- **制作の順番・編集対象は `WORKFLOW.md` に従う**（構成案 → 台本 → ElevenLabs生成。同時手編集しない）
+- **制作の順番・編集対象は `WORKFLOW.md` に従う**（①骨子 → ②構成案 → ③台本 → ④ElevenLabs。同時手編集しない）
 
 ---
 
@@ -77,10 +77,11 @@
 
 | 段階 | 依るルール | 成果物 |
 |------|------------|--------|
-| 構成案 | このファイル | `output/*-outline.md` など |
-| 本番台本 | `GUIDELINES.md` | `output/*-script.md` など |
-| ElevenLabs用 | `WORKFLOW.md`（生成） | `output/*-script-for-elevenlabs.txt` |
+| ①骨子 | （依頼者提供。整える程度） | `output/*-source.md` など |
+| ②構成案 | このファイル | `output/*-outline.md` など |
+| ③台本 | `GUIDELINES.md` | `output/*-script.md` など |
+| ④ElevenLabs | `WORKFLOW.md`（生成） | `output/*-script-for-elevenlabs.txt` |
 
 構成案で決めるのは、話す順番と、各所で言うべき中身である。  
 言い回しの最終調整、禁止表現の除去、音声向けのつなぎは、本番台本の段階で行う。  
-ElevenLabs用は台本から生成し、手編集しない。詳細は `WORKFLOW.md`。
+ElevenLabs用は台本のブロック名を除き、ブロック間に `ーーーーーー` を入れて生成する。手編集しない。詳細は `WORKFLOW.md`。
